@@ -1,6 +1,10 @@
-use gstd::{collections::HashMap, exec, msg, prog::ProgramGenerator, ActorId, CodeId};
-use parity_scale_codec::{Decode, Encode};
-use sails_rs::{gstd::service, prelude::*};
+use gstd::{
+    msg, 
+    prog::ProgramGenerator, 
+    ActorId, 
+    CodeId
+};
+use sails_rs::prelude::*;
 
 use crate::states::state::*;
 

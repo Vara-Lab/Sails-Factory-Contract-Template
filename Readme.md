@@ -13,7 +13,23 @@
   </a>
 </p>
 
-## Step 2: Compile and Deploy the Smart Contract
+## Step 2: Configure gitpod to compile the contract
+
+- Rust: You need to have rust 1.81 or newer to be able to compile your contract: 
+
+```bash
+rustup install 1.81
+rustup default 1.81
+rustup target add wasm32-unknown-unknown
+```
+
+- Next, you need to install the wasm-opt (to optimize WebAssembly files):
+
+```bash
+sudo apt install binaryen
+```
+
+## Step 3: Compile and Deploy the Smart Contract
 
 ### Compile the smart contract by running the following command:
 
@@ -21,10 +37,10 @@
 cargo build --release
 ```
 
-Once the compilation is complete, locate the `*.opt.wasm` file in the `target/wasm32-unknown-unknown/release` directory.
+Once the compilation is complete, locate the `wasm.opt.wasm` file in the `target/wasm32-unknown-unknown/release` directory.
 
-## Step 3: Interact with Your Contract on Vara Network
+## Step 4: Interact with Your Contract on Vara Network
 
 1. Access [Gear IDE](https://idea.gear-tech.io/programs?node=wss%3A%2F%2Frpc.vara.network) using your web browser.
 2. Connect your Substrate wallet to Gear IDE.
-3. Upload the `*.opt.wasm` and `metadata.txt/*.idl` files by clicking the "Upload Program" button.
+3. Upload the `wasm.opt.wasm` and `app.idl` files by clicking the "Upload Program" button.
